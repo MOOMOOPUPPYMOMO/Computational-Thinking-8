@@ -1,5 +1,6 @@
 # Section 1 - Helper functions (DON'T CHANGE!!)
 import turtle, math, time, random
+turtle.Screen().bgcolor("black")
 def set_background(image_filename):
     screen = turtle.Screen()
     try:
