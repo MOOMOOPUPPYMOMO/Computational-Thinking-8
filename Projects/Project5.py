@@ -98,5 +98,3 @@ while True:
 
 	window.update()
 
-if get_distance(flappy, pipe) <= 50:
-	break
