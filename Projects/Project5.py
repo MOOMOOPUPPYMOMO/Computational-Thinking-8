@@ -86,6 +86,8 @@ while True:
 		y_position = random.randint(-250, 250)
 		player2 = create_sprite("pipe", 290, y_position)
 		player2.setheading(180)
+		player2.forward(player_speed)
+
 		obstacles.append(player2)
 
 	for player2 in obstacles:
