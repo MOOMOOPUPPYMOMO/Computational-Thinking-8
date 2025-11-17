@@ -63,23 +63,38 @@ player_speed = 15
 # TODO - pick keys for each control
 def up():
 	player.setheading(90)
-	player.forward(17)
+	player.forward(20)
 window.onkeypress(up, "space")
 
 # Section 4: Game Loop
 window.listen()
 timer = 0
+obstacles = []
 while True:
 	time.sleep(0.1)
 	timer += 1
 	player.setheading(270)
+	# this line is how strong gravity is
 	player.forward(10)
  	# TODO - code for automatic actions
+	 
+	 # this line picks how often to spawn new pipes
+	 # this line controls how high or low on the screen the pipe is
+    # this line controls how fast the pipe moves
 
+	if timer % 20 == 0:
+		y_position = random.randint(-250, 250)
+		player2 = create_sprite("pipe", 290, y_position)
+		player2.setheading(180)
+		obstacles.append(player2)
 
+	for player2 in obstacles:
+		player2.forward(10)
+		
 
-
-
+		if get_distance(player, player2) <= 50:
+			print ("Game Over!")
+		break
 
 	window.update()
 
