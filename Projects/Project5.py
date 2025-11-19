@@ -50,7 +50,7 @@ window.tracer(0)
 
 # Section 2: Setup
 # TODO - create your player character
-player = create_sprite("flappy", -200, 0)
+player = create_sprite("flappy", -100, 0)
 player2 = create_sprite("pipe", 290, 0)
 # TODO - set your background
 set_background("SKY")
@@ -75,7 +75,7 @@ while True:
 	timer += 1
 	player.setheading(270)
 	# this line is how strong gravity is
-	player.forward(10)
+	player.forward(15)
  	# TODO - code for automatic actions
 	 
 	 # this line picks how often to spawn new pipes
@@ -96,7 +96,7 @@ while True:
 
 		if get_distance(player, player2) <= 50:
 			print ("Game Over!")
-		break
+			break
 
 	window.update()
 
